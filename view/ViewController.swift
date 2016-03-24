@@ -9,6 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //@IBOutlet weak var view: UILabel!
+    
+    @IBOutlet weak var result: UILabel!
+    
+    //@IBOutlet weak var abc: UILabel!
+    /*
     @IBAction func add(sender: UIButton) {
         var a:Double!=0
         var b:Double!=0
@@ -27,7 +33,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var z: UITextField!
     @IBOutlet weak var y: UITextField!
     @IBOutlet weak var x: UITextField!
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,6 +42,9 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func button(sender: UIButton) {
     }
 
 
