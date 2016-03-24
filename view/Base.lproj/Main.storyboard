@@ -304,6 +304,7 @@
                     <connections>
                         <outlet property="abc" destination="fxg-la-S5i" id="lmB-oO-cOK"/>
                         <outlet property="result" destination="fxg-la-S5i" id="vgW-pL-cMv"/>
+                        <outlet property="resultLaby" destination="fxg-la-S5i" id="zM1-TL-H7f"/>
                         <outlet property="view" destination="fxg-la-S5i" id="2gc-GV-3Vw"/>
                         <outlet property="x" destination="i0e-sP-2Cm" id="6Re-4q-7Ij"/>
                         <outlet property="y" destination="n3Y-Hw-lss" id="lzI-yq-bYu"/>

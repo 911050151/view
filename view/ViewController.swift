@@ -8,10 +8,15 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     //@IBOutlet weak var view: UILabel!
     
-    @IBOutlet weak var result: UILabel!
+    //@IBOutlet weak var result: UILabel!
+    @IBOutlet weak var resultLaby: UILabel!
+    var operand1:String=""
+    var operand2:String=""
+    var operand:String=""
     
     //@IBOutlet weak var abc: UILabel!
     /*
@@ -45,6 +50,38 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button(sender: UIButton) {
+        let value=sender.currentTitle
+        if (value=="+"||value=="-"||value=="*"||value=="/"){
+            operator=value
+            return
+        }
+        else if value=="="
+        {
+            var result=0
+            switch operator{
+                case"+":
+                  result=operand1.toInt()!+operand2.toInt()!
+                case"-":
+                  result=operand1.toInt()!-operand2.toInt()!
+                case"*":
+                  result=operand1.toInt()!*operand2.toInt()!
+                case"/":
+                result=operand1.toInt()!/operand2.toInt()!
+                default:
+                result=0
+            }
+            resultLaby.text="\(result)"
+            return
+        }
+        if operator==""{
+            operand1=operand1 +value
+            resultLaby.text=operand1
+        }else{
+            operand2=operand2 +value
+            resultLaby.text=operand2
+        }
+        
+        
     }
 
 
