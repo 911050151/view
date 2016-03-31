@@ -11,8 +11,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var opeRatorLabel: UILabel!
+    //@IBOutlet weak var opeRatorLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    var opeRand1: String = ""
+    var opeRand2: String = ""
+    var opeRator: String = ""
+
     //@IBAction func opeRatorLabel(sender: AnyObject) {
     //}
     //@IBAction func resultLabel(sender: ) {
@@ -32,35 +36,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func button(sender: UIButton) {
-        var opeRand1: String = ""
-        var opeRand2: String = ""
-        var opeRator: String = ""
-        //var result: String=""
-        //print("opeRand2=\(opeRand2)")
+        
         var value = sender.currentTitle
-        let bool_value = true
-        if  value == "+"||value == "-"||value == "×"||value == "÷"||value == "%"||value == "^"
+        print(value)
+        if  value == "+"||value == "-"||value == "*"||value == "/"||value == "%"||value == "^"
         {
             opeRator = value!
-            opeRatorLabel.text = "\(opeRator)"
+            //opeRatorLabel.text = "\(opeRator)"
             return
-        }
-        else if value == "AC"{
-            value = "0"
-            opeRand1 = ""
-            opeRand2 = ""
-            opeRator = ""
-            resultLabel.text = "0"
-            opeRatorLabel.text = ""
-            return
-        }
-        else if value == "+/-"{
-            if  bool_value ==  true{
-                bool_value == false
-            }
-            else{
-                bool_value == true
-            }
         }
         else if value == "="{
             var result = 0
@@ -69,9 +52,9 @@ class ViewController: UIViewController {
                 result = Int(opeRand1)! + Int(opeRand2)!
             case "-":
                 result = Int(opeRand1)! - Int(opeRand2)!
-            case "×":
+            case "*":
                 result = Int(opeRand1)! * Int(opeRand2)!
-            case "÷":
+            case "/":
                 result = Int(opeRand1)! / Int(opeRand2)!
             case "%":
                 result = Int(opeRand1)! % Int(opeRand2)!
@@ -79,29 +62,51 @@ class ViewController: UIViewController {
                 result = Int(opeRand1)! ^ Int(opeRand1)!
                 
             default :
-                opeRatorLabel.text = "出错请清零"
+                result=0
             }
-            resultLabel.text  = "\(result)"
-            opeRatorLabel.text = ""
+                resultLabel.text = "\(result)"
+            return
+            }
+
+        else if value == "AC"{
+            value = "0"
+            opeRand1 = ""
+            opeRand2 = ""
+            opeRator = ""
+            resultLabel.text = ""
+            //opeRatorLabel.text = ""
+            return
+        }
+        /*else if value == "+/-"{
+            if  bool_value ==  true{
+                bool_value == false
+            }
+            else{
+                bool_value == true
+            }
+        }
+                   resultLabel.text  = "\(result)"
+            //opeRatorLabel.text = ""
             opeRand1 = ""
             opeRand2 = ""
             opeRator = ""
             
             return
         }
+*/
         if opeRator   == ""{
             
             opeRand1  = opeRand1 + value!
-            opeRatorLabel.text = "\(opeRand1)"
-            //resultLabel.text = "\(result)"
-            return
+            //opeRatorLabel.text = "\(opeRand1)"
+            resultLabel.text = "\(opeRand1)"
+        
         }
         else {
             
             opeRand2  = opeRand2 + value!
-            opeRatorLabel.text = "\(opeRand2)"
-            //esultLabel.text = "\(result)"
-            return
+            //opeRatorLabel.text = "\(opeRand2)"
+            resultLabel.text = "\(opeRand2)"
+            
         }
     }
 }
