@@ -11,19 +11,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //@IBOutlet weak var opeRatorLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     var opeRand1: String = ""
     var opeRand2: String = ""
     var opeRator: String = ""
-
-    //@IBAction func opeRatorLabel(sender: AnyObject) {
-    //}
-    //@IBAction func resultLabel(sender: ) {
-    ///
-    //}
-   // @IBOutlet weak var opeRatorLabel: UILabel!
-   // @IBOutlet weak var resultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +26,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func button(sender: UIButton) {
         
         var value = sender.currentTitle
@@ -42,7 +34,6 @@ class ViewController: UIViewController {
         if  value == "+"||value == "-"||value == "*"||value == "/"||value == "%"||value == "^"
         {
             opeRator = value!
-            //opeRatorLabel.text = "\(opeRator)"
             return
         }
         else if value == "="{
@@ -50,6 +41,7 @@ class ViewController: UIViewController {
             switch opeRator {
             case "+":
                 result = Int(opeRand1)! + Int(opeRand2)!
+                resultLabel.text = "result"
             case "-":
                 result = Int(opeRand1)! - Int(opeRand2)!
             case "*":
@@ -65,7 +57,10 @@ class ViewController: UIViewController {
                 result=0
             }
                 resultLabel.text = "\(result)"
-            return
+                opeRand1 = ""
+                opeRand2 = ""
+                opeRator = ""
+                return
             }
 
         else if value == "AC"{
@@ -74,37 +69,17 @@ class ViewController: UIViewController {
             opeRand2 = ""
             opeRator = ""
             resultLabel.text = ""
-            //opeRatorLabel.text = ""
             return
         }
-        /*else if value == "+/-"{
-            if  bool_value ==  true{
-                bool_value == false
-            }
-            else{
-                bool_value == true
-            }
-        }
-                   resultLabel.text  = "\(result)"
-            //opeRatorLabel.text = ""
-            opeRand1 = ""
-            opeRand2 = ""
-            opeRator = ""
-            
-            return
-        }
-*/
-        if opeRator   == ""{
+         if opeRator == ""{
             
             opeRand1  = opeRand1 + value!
-            //opeRatorLabel.text = "\(opeRand1)"
             resultLabel.text = "\(opeRand1)"
         
         }
         else {
             
             opeRand2  = opeRand2 + value!
-            //opeRatorLabel.text = "\(opeRand2)"
             resultLabel.text = "\(opeRand2)"
             
         }
