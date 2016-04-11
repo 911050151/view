@@ -34,14 +34,13 @@ class ViewController: UIViewController {
         if  value == "+"||value == "-"||value == "*"||value == "/"||value == "%"||value == "^"
         {
             opeRator = value!
-            return
+            
         }
         else if value == "="{
             var result = 0
             switch opeRator {
             case "+":
                 result = Int(opeRand1)! + Int(opeRand2)!
-                resultLabel.text = "result"
             case "-":
                 result = Int(opeRand1)! - Int(opeRand2)!
             case "*":
@@ -60,7 +59,7 @@ class ViewController: UIViewController {
                 opeRand1 = ""
                 opeRand2 = ""
                 opeRator = ""
-                return
+            
             }
 
         else if value == "AC"{
@@ -69,7 +68,7 @@ class ViewController: UIViewController {
             opeRand2 = ""
             opeRator = ""
             resultLabel.text = ""
-            return
+            
         }
          if opeRator == ""{
             
@@ -85,25 +84,4 @@ class ViewController: UIViewController {
         }
     }
 }
-//@IBOutlet weak var abc: UILabel!
-/*
-@IBAction func add(sender: UIButton) {
-var a:Double!=0
-var b:Double!=0
-var c:Double!=0
-if(!x.text!.isEmpty){
-a=(x.text! as NSString).doubleValue
-}
-if(!y.text!.isEmpty){
-b=(y.text! as NSString).doubleValue
-}
-c=a+b
-z.text="\(c)"
-
-
-}
-@IBOutlet weak var z: UITextField!
-@IBOutlet weak var y: UITextField!
-@IBOutlet weak var x: UITextField!
-*/
 
