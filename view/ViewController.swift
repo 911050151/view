@@ -94,6 +94,7 @@ class ViewController: UIViewController {
     }
     @IBAction func pwd(sender: UIButton) {
         //show.text!="\(pwd((Double)(show.text!)))";
+
     }
     @IBAction func count(sender: UIButton) {
         var result = 0.0;
