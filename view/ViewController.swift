@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var opeRand2: String = ""
     var opeRator: String = ""
     var dianLopp=false;
+    var result = 0.0;
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -87,17 +88,17 @@ class ViewController: UIViewController {
         opeRator="/";
     }
     @IBAction func chu100(sender: UIButton) {
-       // var result:Double=0.0;
-        //result = Double(show.text!);
+      
+        result = Double(show.text!)!/100;
         
         
     }
     @IBAction func pwd(sender: UIButton) {
-        //show.text!="\(pwd((Double)(show.text!)))";
+       let tmp=Double(show.text!)!*Double(show.text!)!//静态 只能赋一次值
+       show.text!="\(tmp)";
 
     }
     @IBAction func count(sender: UIButton) {
-        var result = 0.0;
         opeRand2=(show.text!);
         switch opeRator {
         case "+":
