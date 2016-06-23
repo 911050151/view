@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         show.text!+="9";
     }
     @IBAction func add0(sender: UIButton) {
-        show.text!+="9";
+        show.text!+="0";
     }
     @IBAction func addDain(sender: UIButton) {
         if(!dianLopp)
